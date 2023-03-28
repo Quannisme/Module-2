@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class find_student {
     public static void main(String[] args) {
-        String[] student={"Trung ", "Thành ","Hà" , "Quân"};
+        String[] student={"Trung", "Thành","Hà" , "Quân"};
         String name;
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter your name you want to find:");
@@ -17,4 +17,3 @@ public class find_student {
         }
     }
 }
-// không tìm đc
