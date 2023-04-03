@@ -2,7 +2,7 @@ package ss03_java.BT;
 
 import java.util.Scanner;
 
-public class total_cot {
+public class TotalCot {
     public static void main(String[] args) {
         int hang;
         int cot;
@@ -24,17 +24,17 @@ public class total_cot {
             }
             System.out.println(" ");
         }
-        int indexcot = 0;
+        int indexCot = 0;
         int total = 0;
         System.out.println("Nhap so cot muon tinh tong:");
-        indexcot = sc.nextInt();
+        indexCot = sc.nextInt();
         for (int i = 0; i < hang; i++) {
             for (int j = 0; j < cot; j++) {
-                if (j == indexcot) {
+                if (j == indexCot) {
                     total += arr[i][j];
                 }
             }
         }
-        System.out.println("Max cua cot" + " " + indexcot + total);
+        System.out.println("Max cua cot" + " " + indexCot + total);
     }
 }

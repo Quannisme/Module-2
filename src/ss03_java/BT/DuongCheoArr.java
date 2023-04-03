@@ -2,7 +2,7 @@ package ss03_java.BT;
 
 import java.util.Scanner;
 
-public class duong_cheo {
+public class DuongCheoArr {
     public static void main(String[] args) {
         int hang;
         int cot;

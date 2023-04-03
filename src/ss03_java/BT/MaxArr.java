@@ -2,7 +2,7 @@ package ss03_java.BT;
 
 import java.util.Scanner;
 
-public class max_2chieu {
+public class MaxArr {
     public static void main(String[] args) {
         int hang;
         int cot;
@@ -24,16 +24,16 @@ public class max_2chieu {
             }
             System.out.println(" ");
         }
-        int indexhang = 0;
-        int indexcot = 0;
+        int indexHang = 0;
+        int indexCot = 0;
         int max = arr[0][0];
         for (int i = 0; i < hang; i++) {
             for (int j = 0; j < cot; j++) {
                 max = arr[0][0];
                 if (arr[i][j] > max) {
                     max = arr[i][j];
-                    indexhang = i;
-                    indexcot = j;
+                    indexHang = i;
+                    indexCot = j;
                 }
             }
         }
