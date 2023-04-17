@@ -1,74 +1,98 @@
 package ss10.java.BT.bai1;
 
-import java.util.ArrayList;
+public class MyList<E> {
+    private int size = 0;
+    private static final int DEFAULT_CAPACITY = 10;
+    private Object elementsData[];
 
-public class MyList<E>{
-    private ArrayList<E>mylist=new ArrayList<>();
-    int size=0;
-    private static final int DEFAULT_CAPACITY=10;
-    private Object elements[];
-    MyList(){}
-
-    public MyList(ArrayList<E> mylist, int size, Object[] elements) {
-        this.mylist = mylist;
-        this.size = size;
-        this.elements = elements;
+    MyList() {
+        elementsData = new Object[DEFAULT_CAPACITY];
     }
 
-    public ArrayList<E> getMylist() {
-        return mylist;
+    MyList(int capacity) {
+        elementsData = new Object[capacity];
     }
 
-    public void setMylist(ArrayList<E> mylist) {
-        this.mylist = mylist;
+    void ensureCapacity(int minCapacity) {
+        if (minCapacity >= elementsData.length) {
+            E[] newArr = (E[]) (new Object[size * 2 + 1]);
+            System.arraycopy(elementsData, 0, newArr, 0, size);
+            elementsData = newArr;
+        }
     }
 
-    public int getSize() {
-        return size;
+    void add(int index, E elements) {
+        ensureCapacity(size + 1);
+        System.arraycopy(elementsData, index, elementsData, index + 1,
+                size - index);
+        elementsData[index] = elements;
+        size++;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    E elementsData(int index) {
+        return (E) elementsData[index];
     }
 
-    public Object[] getElements() {
-        return elements;
+    E remove(int index) {
+        E oldValue = elementsData(index);
+        int numMoved = size - index - 1;
+        if (numMoved > 0) {
+            System.arraycopy(elementsData, index + 1, elementsData, index,
+                    numMoved);
+
+        }
+        elementsData[--size] = null;
+        return oldValue;
     }
 
-    public void setElements(Object[] elements) {
-        this.elements = elements;
+    int size() {
+        return this.size;
     }
-    void add(int Index , E element)
-    {
-        mylist.add(Index,element);
+
+    // E clone()
+    E get(int index) {
+        return elementsData(index);
     }
-    E removeMylist(int Index)
-    {
-        return mylist.remove(Index);
+
+    boolean add(E o) {
+        ensureCapacity(size + 1);
+        elementsData[size++] = o;
+        return true;
     }
-    int size()
-    {
-        return mylist.size();
+
+    void clear() {
+        for (int i = 0; i < size; i++) {
+            elementsData[i] = null;
+        }
+        size = 0;
     }
-    E cloneMylist()
-    {
-        return (E) mylist.clone();
+
+    int indexOf(E e) {
+        if (e == null) {
+            for (int i = 0; i < size; i++) {
+                if (elementsData[i] == e) {
+
+                    return i;
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (e.equals(elementsData[i])) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
-    boolean add(E e)
-    {
-        return mylist.add(e);
+
+    boolean contain(E e) {
+        return indexOf(e) >= 0;
     }
-    boolean containsMylist(E e)
-    {
-        return mylist.contains(e);
-    }
-    int indexOfMylist(int Index)
-    {
-        return mylist.indexOf(Index);
-    }
-    void ensureCapa()
-    {
-        int newSize=elements.length*2;
-        return;
+
+    Object clonee() {
+        MyList<E> clone = new MyList<>();
+        System.arraycopy(elementsData, 0, clone.elementsData, 0, size);
+        clone.size = size;
+        return clone;
     }
 }
