@@ -1,6 +1,6 @@
 package ss06.java.TH;
 
-import jdk.nashorn.internal.ir.WithNode;
+//import jdk.nashorn.internal.ir.WithNode;
 
 public class Rectangle extends Shape {
     private double width;
