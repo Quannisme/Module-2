@@ -10,5 +10,8 @@ public class Test {
 //        p1.sortList();
         p1.showlist();
         p1.sortlist();
+        p1.searchProduct(4);
+        p1.editProduct(1,"quan",123213);
+        p1.showlist();
     }
 }
