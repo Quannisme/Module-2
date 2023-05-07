@@ -6,8 +6,10 @@ import java.util.Scanner;
 import caseStudy.modell.Employee;
 import caseStudy.servicee.imple.CustomerServiceImple;
 import caseStudy.servicee.imple.EmployeeServiceImple;
+import caseStudy.servicee.imple.FacilityServiceImple;
 import caseStudy.servicee.inter.CustomerService;
 import caseStudy.servicee.inter.EmployeeService;
+import caseStudy.servicee.inter.FacilityService;
 
 public class FaramaController {
     public static Scanner sc=new Scanner(System.in);
@@ -15,17 +17,19 @@ public class FaramaController {
     public static EmployeeService e1=new EmployeeServiceImple();
     //Customer
     public static CustomerService c1=new CustomerServiceImple();
+    public static FacilityService f1=new FacilityServiceImple();
+    // TONG QUAT
    public static void display()
    {
     while(true)
     {
-        System.out.println("*****CHƯƠNG TRÌNH QUẢN LÝ BỆNH ÁN*****");
+        System.out.println("*****CHƯƠNG TRÌNH QUẢN LÝ Furama*****");
         System.out.println("Chọn chức năng theo số (để tiếp tục): ");
         System.out.println("1. Employee Management");
         System.out.println("2. Customer Management");
         System.out.println("3. Facility Management");
         System.out.println("4. Booking Management");
-        System.out.println("Promotion Management");
+        System.out.println("5. Promotion Management");
         System.out.print("***Vui lòng chọn chức năng từ 1 đến 4 : ");
         int choice=Integer.parseInt(sc.nextLine());
         switch(choice)
@@ -40,9 +44,20 @@ public class FaramaController {
                 customer();
                 break;
             }
+            case 3:
+            {
+                facility();
+                break;
+            }
+            case 4:
+            {
+                bookingManagement();
+                break;
+            }
         }
     }
    }
+   // QUAN LI EMPLOYEE
    public static void employee()
    {
     int choose;
@@ -77,6 +92,7 @@ public class FaramaController {
         }
     }while(choose<4);
    }
+   // QUAN LI CUSTOMER
    public static void customer()
    {
     int choose;
@@ -105,6 +121,118 @@ public class FaramaController {
                 break;
             }
             case 4:
+            {
+                break;
+            }
+        }
+    }while(choose<4);
+   }
+   // QUAN LI FACILITY
+   public static void facility()
+   {
+    int choose;
+    do{
+        System.out.println("1. Display Facility");
+        System.out.println("2. Add new Facility");
+        System.out.println("3. Display list facility maintenance");
+        System.out.println("4. Return  main menu");
+        choose=sc.nextInt();
+        switch(choose)
+        {
+            case 1:
+            {
+                f1.displayListFacility();
+                break;
+            }
+            case 2:
+            {
+                case2();
+                break;
+            }
+            case 3:
+            {
+                f1.displayListMaintenance();
+                break;
+            }
+            case 4:
+            {
+                break;
+            }
+        }
+
+    }while(choose<4);
+   }
+   // PHAN TRONG QUAN LI FACILITY
+   public static void case2()
+   {
+    int choose;
+    do {
+        System.out.println("1. Add New Villa");
+        System.out.println("2. Add New House");
+        System.out.println("3. Add New Room");
+        System.out.println("4. Back to menu");
+        choose=sc.nextInt();
+        switch(choose)
+        {
+            case 1:
+            {
+                f1.addVilla();
+                break;
+            }
+            case 2:
+            {
+                f1.addHouse();
+                break;
+            }
+            case 3:
+            {
+                f1.addRoom();
+                break;
+            }
+            case 4:
+            {
+                break;
+            }
+        }
+    }while(choose<4);
+   }
+
+// QUAN LI BOOKING
+
+public static void bookingManagement()
+   {
+    int choose;
+    do{
+        System.out.println("1. Add new booking");
+        System.out.println("2. Display list booking");
+        System.out.println("3. Create new contract");
+        System.out.println("4. Display list contract");
+        System.out.println("5. Edit contracts");
+        System.out.println("6. Return main menu");
+        choose=sc.nextInt();
+        switch(choose)
+        {
+            case 1:
+            {
+                break;
+            }
+            case 2:
+            {
+                break;
+            }
+            case 3:
+            {
+                break;
+            }
+            case 4:
+            {
+                break;
+            }
+            case 5:
+            {
+                break;
+            }
+            case 6:
             {
                 break;
             }

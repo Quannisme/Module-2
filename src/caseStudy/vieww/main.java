@@ -7,7 +7,7 @@ public class main {
         FaramaController.display();
     }    
 }
-// van de o cho trinh do hoc van cua nhan vien 
-// ben edit cung bi van de tuong tu nhu o trinh do hoc van 
+
+
 
 
