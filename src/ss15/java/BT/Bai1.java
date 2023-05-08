@@ -2,7 +2,7 @@ package ss15.java.BT;
 
 import java.util.Scanner;
 
-public class bai1 {
+public class Bai1 {
     public static void main(String[] args) {
         double a, b, c;
         Scanner sc = new Scanner(System.in);
@@ -17,18 +17,18 @@ public class bai1 {
                 throw new ArithmeticException("Nhap khong hop le");
             if(a+b<c)
             {
-                throw new tongException("Nhap khong hop le ");
+                throw new TongException("Nhap khong hop le ");
             } else if (a+c<b) {
 
-                throw new tongException("Nhap khong hop le ");
+                throw new TongException("Nhap khong hop le ");
             }else if(b+c<a)
             {
-                throw new tongException("Nhap khong hop le ");
+                throw new TongException("Nhap khong hop le ");
             }
         }catch (ArithmeticException e)
         {
             System.out.println("cac canh phai la so duong");
-        }catch (tongException e)
+        }catch (TongException e)
         {
             System.out.println("Tong 2 canh phai lon hon canh con lai");
         }

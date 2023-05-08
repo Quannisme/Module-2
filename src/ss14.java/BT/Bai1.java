@@ -1,8 +1,7 @@
 package ss14.java.BT;
 
-import javax.swing.text.html.FormView;
 import java.util.*;
-public class bai1{
+public class Bai1 {
     public static void main(String[] args) {
         int []arr= {1, 3, 2, 8, 6, 4, 5, 9};
         int pos,x;

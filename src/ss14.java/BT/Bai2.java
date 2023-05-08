@@ -1,6 +1,6 @@
 package ss14.java.BT;
 
-public class bai2 {
+public class Bai2 {
         public static void insertionSort(int[] array){
             int pos, x;
             for(int i = 1; i < array.length; i++){ 
