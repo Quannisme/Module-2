@@ -6,14 +6,14 @@ import java.util.List;
 
 public class CoppyFile {
 
-    public static final String FILE_PATH = "D:\\codegym\\Module-2\\src\\ss16\\java\\BT\\bai1\\source.csv";
     public static final String FILE_PATH2 = "D:\\codegym\\Module-2\\src\\ss16\\java\\BT\\bai1\\Target.csv";
+    public static final String FILE_PATH3 = "D:\\Code_Code_Code(G)\\Module-2\\src\\ss16\\java\\BT\\bai1\\Ssource.csv";
 
     public static List<Integer>readCSV() throws IOException {
         List<Integer>number=new ArrayList<>();
         try
         {
-            FileReader fileReader=new FileReader(FILE_PATH);
+            FileReader fileReader=new FileReader(FILE_PATH3);
             BufferedReader br=new BufferedReader(fileReader);
             String line;
             String temp[];
