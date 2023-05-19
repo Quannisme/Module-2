@@ -6,7 +6,7 @@ public class Customer extends Person {
     int idCustomer;
     String typeCustomer;
     String location;
-    public Customer(String fullName, LocalDate dayOfBirth, String general, String cmndNumber, int numberCall, int idCustomer,
+    public Customer(String fullName, LocalDate dayOfBirth, String general, String cmndNumber, String numberCall, int idCustomer,
             String typeCustomer, String location) {
         super(fullName, dayOfBirth, general, cmndNumber, numberCall);
         this.idCustomer = idCustomer;

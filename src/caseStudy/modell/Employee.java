@@ -3,16 +3,16 @@ package caseStudy.modell;
 import java.time.LocalDate;
 
 public class Employee extends Person {
-    int idEmployee;
+    String idEmployee;
     String levelStudy;
     String location;
     double salary;
-    public int getIdEmployee() {
+    public String getIdEmployee() {
         return idEmployee;
     }
     public Employee() {
     }
-    public Employee(String fullName, LocalDate dayOfBirth, String general, String cmndNumber, int numberCall, int idEmployee,
+    public Employee(String fullName, LocalDate dayOfBirth, String general, String cmndNumber, String numberCall, String idEmployee,
             String levelStudy, String location, double salary) {
         super(fullName, dayOfBirth, general, cmndNumber, numberCall);
         this.idEmployee = idEmployee;
@@ -25,7 +25,7 @@ public class Employee extends Person {
         return "Employee [idEmployee=" + idEmployee + ", levelStudy=" + levelStudy + ", location=" + location
                 + ", salary=" + salary + "]";
     }
-    public void setIdEmployee(int idEmployee) {
+    public void setIdEmployee(String idEmployee) {
         this.idEmployee = idEmployee;
     }
     public String getLevelStudy() {

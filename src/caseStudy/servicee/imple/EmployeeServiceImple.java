@@ -22,8 +22,8 @@ public class EmployeeServiceImple implements EmployeeService {
         LocalDate dayOfBirth=getDayOfBirth();
         String general=getGeneral();
         String cmndNumber=getCMND();
-        int numberCall=getNumberCall();
-        int idEmployee=getIdEmployee();
+        String numberCall=getNumberCall();
+        String idEmployee=getIdEmployee();
         String levelStudy=getLevelStudy();
         String location=getLocal();
         double salary=getSalary();
@@ -36,7 +36,7 @@ public class EmployeeServiceImple implements EmployeeService {
     @Override
     public void edit() {
         System.out.println("Nhap id muon tim:");
-        int n=sc.nextInt();
+        String n=sc.nextLine();
         for (int i = 0; i < p1.size(); i++) {
             if(p1.get(i).getIdEmployee()==n)
             {
@@ -71,6 +71,7 @@ public class EmployeeServiceImple implements EmployeeService {
     LocalDate getDayOfBirth()
     {
         while (true) {
+            try {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 System.out.println("Nhập ngày tháng năm  (dd/mm/yyyy): ");
                 String dateStr = sc.nextLine();
@@ -78,6 +79,10 @@ public class EmployeeServiceImple implements EmployeeService {
                     return LocalDate.parse(dateStr, formatter);
                 }
                 System.out.println("Bạn nhập sai ngày");
+            }catch (Exception e)
+            {
+                System.out.println("Loi");
+            }
         }
     }
     String getGeneral()
@@ -100,17 +105,38 @@ public class EmployeeServiceImple implements EmployeeService {
         }
      }   
     }
-    int getNumberCall()
+    String getNumberCall()
     {
-        System.out.println("Nhap dum cai so dien thoai:");
-        int n=Integer.parseInt(sc.nextLine());
-        return n;
+        while(true)
+        {
+            System.out.println("Nhap dum cai so dien thoai:");
+            String n=sc.nextLine();
+            if(Validate.isPhone(n))
+            {
+                return n;
+            }else
+            {
+                System.out.println("Moi ban nhap lai");
+            }
+        }
     }
-    int getIdEmployee()
+    String getIdEmployee()
     {
-        System.out.println("Nhap Id cua nhan vien");
-        int n=Integer.parseInt(sc.nextLine());
-        return n;
+        while(true)
+        {
+            System.out.println("Nhap id cua nhan vien (NV-YYYY):");
+            String n=sc.nextLine();
+            if(Validate.isId(n))
+            {
+             return n;
+            }else
+            {
+                System.out.println("Nhap lai");
+            }
+        }
+//        System.out.println("Nhap Id cua nhan vien");
+//        int n=Integer.parseInt(sc.nextLine());
+//        return n;
     }
     String getLevelStudy()
     {
@@ -124,8 +150,23 @@ public class EmployeeServiceImple implements EmployeeService {
     }
     double getSalary()
     {
-        System.out.println("Luong cua nhan vien:");
-        double n=Double.parseDouble(sc.nextLine());
-        return n;
+        while(true)
+        {
+            System.out.println("Luong cua nhan vien:");
+            double n=Double.parseDouble(sc.nextLine());
+            if (n>0)
+            {
+                return n;
+            }else
+            {
+                System.out.println("Moi ban nhap lai");
+            }
+        }
+//        System.out.println("Luong cua nhan vien:");
+//        double n=Double.parseDouble(sc.nextLine());
+//        if(n<0)
+//        {
+//
+//        }
     }
 }

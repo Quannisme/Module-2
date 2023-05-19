@@ -6,7 +6,9 @@ import java.time.Year;
 public class Validate {
 
     private static final String DATE_FORMAT = "\\d{2}/\\d{2}/\\d{4}";
-    private static final String CMND_FORMAT="\\d{9}";
+    private static final String CMND_FORMAT="^[0-9]{9,12}$";
+    private static final String PHONE_FORMAT="^[0-9]{10}$";
+    private static final String ID_FORMAT="^NV-[0-9]{4}$";
     public static boolean isDateRight(String dateStr) {
         if (!dateStr.matches(DATE_FORMAT)) {
             return false;
@@ -31,5 +33,13 @@ public class Validate {
     public static boolean isCMND(String CMND)
     {
         return CMND.matches(CMND_FORMAT);
+    }
+    public static boolean isId(String ID)
+    {
+        return ID.matches(ID_FORMAT);
+    }
+    public static boolean isPhone(String Phone)
+    {
+        return Phone.matches(PHONE_FORMAT);
     }
 }

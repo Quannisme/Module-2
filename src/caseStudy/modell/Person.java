@@ -2,7 +2,7 @@ package caseStudy.modell;
 
 import java.time.LocalDate;
 
-public class Person {
+public abstract class Person {
     String fullName;
     LocalDate dayOfBirth;
     String general;
@@ -12,8 +12,8 @@ public class Person {
         return "Person [fullName=" + fullName + ", dayOfBirth=" + dayOfBirth + ", general=" + general + ", cmndNumber="
                 + cmndNumber + ", numberCall=" + numberCall + "]";
     }
-    int numberCall;
-    public Person(String fullName, LocalDate dayOfBirth, String general, String cmndNumber, int numberCall) {
+    String numberCall;
+    public Person(String fullName, LocalDate dayOfBirth, String general, String cmndNumber, String numberCall) {
         this.fullName = fullName;
         this.dayOfBirth = dayOfBirth;
         this.general = general;
@@ -46,10 +46,10 @@ public class Person {
     public void setCmndNumber(String cmndNumber) {
         this.cmndNumber = cmndNumber;
     }
-    public int getNumberCall() {
+    public String getNumberCall() {
         return numberCall;
     }
-    public void setNumberCall(int numberCall) {
+    public void setNumberCall(String numberCall) {
         this.numberCall = numberCall;
     }
     
