@@ -1,7 +1,12 @@
 package caseStudy.servicee.inter;
 
+import java.io.IOException;
+
 public interface EmployeeService extends Service {
-    void add();    
+    void add() throws IOException;
     void edit();
-    void display();
+
+    void removee();
+
+    void display() throws Exception;
 }
