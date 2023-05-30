@@ -14,11 +14,16 @@ public class Validate {
 
     private static final String DATE_FORMAT = "^\\d{2}/\\d{2}/\\d{4}$";
     private static final String CMND_FORMAT="^[0-9]{9,12}$";
-    private static final String PHONE_FORMAT="^[0-9]{10}$";
+    private static final String PHONE_FORMAT="^[0][0-9]{9}$";
     private static final String ID_FORMAT="^NV-[0-9]{4}$";
     private static final String ID_CUSTOMER="^KH-[0-9]{4}$";
     public static final String REGEX_EMAIL = "^[\\w.]+@[\\w&&[^_]]+([.][\\w&&[^_]]+){1,2}$";
     private static final String REGEX_FULL_NAME = "[AÀẢÃÁẠĂẰẲẴẮẶÂẦẨẪẤẬBCDĐEÈẺẼÉẸÊỀỂỄẾỆFGHIÌỈĨÍỊJKLMNOÒỎÕÓỌÔỒỔỖỐỘƠỜỞỠỚỢPQRSTUÙỦŨÚỤƯỪỬỮỨỰVWXYỲỶỸÝỴZ][aàảãáạăằẳẵắặâầẩẫấậbcdđeèẻẽéẹêềểễếệfghiìỉĩíịjklmnoòỏõóọôồổỗốộơờởỡớợpqrstuùủũúụưừửữứựvwxyỳỷỹýỵz]+((\\s[AÀẢÃÁẠĂẰẲẴẮẶÂẦẨẪẤẬBCDĐEÈẺẼÉẸÊỀỂỄẾỆFGHIÌỈĨÍỊJKLMNOÒỎÕÓỌÔỒỔỖỐỘƠỜỞỠỚỢPQRSTUÙỦŨÚỤƯỪỬỮỨỰVWXYỲỶỸÝỴZ][aàảãáạăằẳẵắặâầẩẫấậbcdđeèẻẽéẹêềểễếệfghiìỉĩíịjklmnoòỏõóọôồổỗốộơờởỡớợpqrstuùủũúụưừửữứựvwxyỳỷỹýỵz]+)+)?";
+    //nghia
+    public static final String NAME_REGEX = "^(?!\\p{Lower})\\p{L}+(?:\\s(?!\\p{Lower})\\p{L}+)*$";
+    public static final String NUMBERPHONE_REGEX = "^0[23789]\\d{8}$";
+    public static final String ID_CODE_REGEX = "^\\d{9}$|^\\d{12}$";//cmnd
+
     public static boolean isDateRight(String dateStr) {
         if (!dateStr.matches(DATE_FORMAT)) {
             return false;
